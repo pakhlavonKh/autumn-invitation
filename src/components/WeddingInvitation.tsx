@@ -35,21 +35,22 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 export function WeddingInvitation() {
   return (
     <div className="bg-[#f6efe7] text-foreground">
-
       {/* ================= HERO ================= */}
       <section className="relative min-h-screen h-screen flex items-center overflow-hidden">
+        {/* Floating Hearts */}
+        <Heart className="absolute top-10 left-10 w-8 h-8 text-autumn-warm fill-autumn-warm opacity-70 animate-float-slow z-20" />
+        <Heart className="absolute top-1/4 right-16 w-6 h-6 text-autumn-brown fill-autumn-brown opacity-60 animate-float-medium z-20" />
+        <Heart className="absolute bottom-20 left-1/3 w-10 h-10 text-autumn-warm fill-autumn-warm opacity-80 animate-float-fast z-20" />
+        <Heart className="absolute bottom-10 right-24 w-7 h-7 text-autumn-brown fill-autumn-brown opacity-50 animate-float-slow z-20" />
+        <Heart className="absolute top-1/2 left-1/4 w-5 h-5 text-autumn-warm fill-autumn-warm opacity-60 animate-float-medium z-20" />
 
+        
         {/* gradient background */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#f6efe7] via-[#efe4d8] to-[#e8d8c7]" />
 
-        {/* blurred bg image */}
-        <img
-          src={coupleHero}
-          className="absolute inset-0 w-full h-full object-cover opacity-20 blur-sm scale-105"
-        />
+        {/* blurred bg image removed */}
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-
           {/* TEXT */}
           <div className="text-center md:text-left">
             <p className="uppercase tracking-[0.3em] text-xs text-autumn-brown/70 mb-4">
@@ -92,28 +93,46 @@ export function WeddingInvitation() {
             </div>
           </div>
 
-          {/* IMAGE */}
-          <div className="flex justify-center">
-            <div className="relative w-[280px] md:w-[360px] aspect-[3/4]">
-
-              {/* soft background blob */}
-              <div className="absolute inset-0 bg-[#e9d8c7] rounded-[40%] blur-2xl opacity-40 scale-110" />
-
-              <img
-                src={coupleHero}
-                className="relative w-full h-full object-cover rounded-[24px] shadow-xl"
-              />
-            </div>
-          </div>
+          {/* IMAGE removed from hero */}
         </div>
       </section>
-
+      <style>
+        {`
+        @keyframes float-slow {
+          0% { transform: translateY(0) scale(1); }
+          50% { transform: translateY(-20px) scale(1.1); }
+          100% { transform: translateY(0) scale(1); }
+        }
+        @keyframes float-medium {
+          0% { transform: translateY(0) scale(1); }
+          50% { transform: translateY(-30px) scale(1.08); }
+          100% { transform: translateY(0) scale(1); }
+        }
+        @keyframes float-fast {
+          0% { transform: translateY(0) scale(1); }
+          50% { transform: translateY(-40px) scale(1.15); }
+          100% { transform: translateY(0) scale(1); }
+        }
+        .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+        .animate-float-medium { animation: float-medium 4.5s ease-in-out infinite; }
+        .animate-float-fast { animation: float-fast 3s ease-in-out infinite; }
+        @keyframes float-leaf-orange {
+          0% { transform: translateY(0) rotate(-8deg) scale(1); }
+          50% { transform: translateY(-24px) rotate(8deg) scale(1.08); }
+          100% { transform: translateY(0) rotate(-8deg) scale(1); }
+        }
+        @keyframes float-leaf-yellow {
+          0% { transform: translateY(0) rotate(6deg) scale(1); }
+          50% { transform: translateY(-18px) rotate(-6deg) scale(1.04); }
+          100% { transform: translateY(0) rotate(6deg) scale(1); }
+        }`}
+      </style>
       {/* ================= INTRO ================= */}
       <section className="py-24 px-6">
         <div className="max-w-2xl mx-auto text-center">
           <p className="font-script text-2xl text-muted-foreground italic">
-            "And now these three remain: faith, hope and love.
-            But the greatest of these is love."
+            "And now these three remain: faith, hope and love. But the greatest
+            of these is love."
           </p>
 
           <p className="text-xs uppercase tracking-widest mt-4 text-muted-foreground">
@@ -123,8 +142,8 @@ export function WeddingInvitation() {
           <Divider />
 
           <p className="text-muted-foreground text-sm leading-relaxed">
-            With the blessing of God and our families, we joyfully invite you
-            to share this special moment with us.
+            With the blessing of God and our families, we joyfully invite you to
+            share this special moment with us.
           </p>
         </div>
       </section>
@@ -132,7 +151,6 @@ export function WeddingInvitation() {
       {/* ================= NAMES ================= */}
       <section className="py-24 px-6 bg-[#efe4d8]">
         <div className="max-w-3xl mx-auto text-center">
-
           <img
             src={coupleWalking}
             className="w-[280px] md:w-[340px] h-[380px] object-cover rounded-xl mx-auto shadow-lg mb-12"
@@ -157,12 +175,10 @@ export function WeddingInvitation() {
       {/* ================= DETAILS ================= */}
       <section className="py-24 px-6">
         <div className="max-w-xl mx-auto text-center">
-
           <SectionTitle>Ceremony Details</SectionTitle>
           <Divider />
 
           <div className="space-y-4 text-muted-foreground">
-
             <div className="flex justify-center gap-2">
               <Calendar className="w-4 h-4 text-autumn-warm" />
               Saturday, December 20th, 2025
@@ -188,7 +204,6 @@ export function WeddingInvitation() {
       {/* ================= SCHEDULE ================= */}
       <section className="py-24 px-6 bg-[#efe4d8]">
         <div className="max-w-xl mx-auto">
-
           <SectionTitle>Schedule</SectionTitle>
           <Divider />
 
@@ -199,7 +214,10 @@ export function WeddingInvitation() {
               ["6:30 PM", "Reception"],
               ["10:00 PM", "After Party"],
             ].map(([time, event]) => (
-              <div key={time} className="flex justify-between border-b border-autumn-brown/10 pb-2">
+              <div
+                key={time}
+                className="flex justify-between border-b border-autumn-brown/10 pb-2"
+              >
                 <span className="font-serif text-autumn-rust">{time}</span>
                 <span className="text-muted-foreground">{event}</span>
               </div>
@@ -211,7 +229,6 @@ export function WeddingInvitation() {
       {/* ================= DRESS / GIFTS ================= */}
       <section className="py-24 px-6">
         <div className="max-w-xl mx-auto text-center">
-
           <Shirt className="mx-auto mb-4 text-autumn-warm" />
           <SectionTitle>Dress Code</SectionTitle>
           <p className="mt-3 text-muted-foreground">
@@ -230,7 +247,6 @@ export function WeddingInvitation() {
 
       {/* ================= RSVP ================= */}
       <section className="py-24 px-6 bg-[#efe4d8] text-center">
-
         <CheckCircle className="mx-auto mb-4 text-autumn-warm" />
 
         <SectionTitle>Confirm Attendance</SectionTitle>
@@ -239,14 +255,32 @@ export function WeddingInvitation() {
           Please confirm before November 20, 2025
         </p>
 
-        <a className="inline-block mt-8 px-10 py-3 bg-autumn-warm text-white rounded-full">
-          RSVP Now
-        </a>
+        <form className="mt-8 max-w-md mx-auto bg-white/80 rounded-xl p-8 shadow space-y-6 text-left">
+          <div>
+            <label htmlFor="rsvp-name" className="block text-sm font-medium text-autumn-brown mb-1">Name</label>
+            <input id="rsvp-name" name="name" type="text" required className="w-full px-4 py-2 rounded border border-autumn-brown/20 focus:outline-none focus:ring-2 focus:ring-autumn-warm" />
+          </div>
+          <div>
+            <label htmlFor="rsvp-email" className="block text-sm font-medium text-autumn-brown mb-1">Email</label>
+            <input id="rsvp-email" name="email" type="email" required className="w-full px-4 py-2 rounded border border-autumn-brown/20 focus:outline-none focus:ring-2 focus:ring-autumn-warm" />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-autumn-brown mb-1">Will you attend?</label>
+            <div className="flex gap-6 mt-2">
+              <label className="flex items-center gap-2">
+                <input type="radio" name="attendance" value="yes" required className="accent-autumn-warm" /> Yes
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="radio" name="attendance" value="no" required className="accent-autumn-warm" /> No
+              </label>
+            </div>
+          </div>
+          <button type="submit" className="w-full mt-4 px-6 py-3 bg-autumn-warm text-white rounded-full font-semibold hover:opacity-90 transition">Submit RSVP</button>
+        </form>
       </section>
 
       {/* ================= FINAL ================= */}
       <section className="relative h-[60vh] flex items-center justify-center text-center">
-
         <img
           src={coupleClose}
           className="absolute inset-0 w-full h-full object-cover"
