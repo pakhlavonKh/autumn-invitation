@@ -130,20 +130,9 @@ export function WeddingInvitation() {
       {/* ================= INTRO ================= */}
       <section className="py-24 px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <p className="font-script text-2xl text-muted-foreground italic">
-            "And now these three remain: faith, hope and love. But the greatest
-            of these is love."
-          </p>
-
-          <p className="text-xs uppercase tracking-widest mt-4 text-muted-foreground">
-            1 Corinthians 13:13
-          </p>
-
-          <Divider />
-
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            With the blessing of God and our families, we joyfully invite you to
-            share this special moment with us.
+          <h2 className="font-serif text-3xl md:text-4xl text-autumn-brown mb-6">Let’s Make Memories Together!</h2>
+          <p className="text-lg text-muted-foreground">
+            Join us for a day filled with laughter, dancing, and unforgettable moments as we celebrate our love story. Your presence will make our special day even brighter!
           </p>
         </div>
       </section>
