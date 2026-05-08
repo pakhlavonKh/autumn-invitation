@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const WEDDING_DATE = new Date("2025-12-20T16:00:00");
+const WEDDING_DATE = new Date("2026-12-20T16:00:00");
 
 export function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
@@ -23,10 +23,10 @@ export function CountdownTimer() {
   }, []);
 
   const units = [
-    { label: "Days", value: timeLeft.days },
-    { label: "Hours", value: timeLeft.hours },
-    { label: "Minutes", value: timeLeft.minutes },
-    { label: "Seconds", value: timeLeft.seconds },
+    { label: "Дни", value: timeLeft.days },
+    { label: "Часы", value: timeLeft.hours },
+    { label: "Минуты", value: timeLeft.minutes },
+    { label: "Секунды", value: timeLeft.seconds },
   ];
 
   return (
